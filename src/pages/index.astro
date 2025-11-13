@@ -1,18 +1,15 @@
 ---
+// Home.astro
+import MainLayouts from "../layout/MainLayouts.astro"
 import Navbar from "../components/Navbar.astro"
+import ImageCarousel from "../components/ImageCarousel.astro"
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Inicio</title>
-</head>
-<body>
-
-	<Navbar  />
-<h1>aca hiria index</h1>
-
-</body>
-</html>
+<MainLayouts title="Home Page">
+  <Navbar />
+  
+  <main>
+    <ImageCarousel />
+    
+  </main>
+</MainLayouts>
