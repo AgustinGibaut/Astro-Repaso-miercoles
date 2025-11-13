@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background: #1a1a1a;
+  padding: 1rem 0;
+  font-family: system-ui, sans-serif;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.bar {
+  width: 26px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.menu-link {
+  color: #10ff60;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #10ff60;
+  transition: width 0.3s ease;
+}
+
+.menu-link:hover {
+  color: white;
+}
+
+.menu-link:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #1a1a1a;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    border-top: 1px solid #333;
+    display: none;
+  }
+
+  .menu-toggle:checked ~ .menu {
+    display: flex;
+  }
+
+  .menu-toggle:checked ~ .hamburger .bar1 {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .menu-toggle:checked ~ .hamburger .bar2 {
+    opacity: 0;
+    transform: scale(0);
+  }
+  .menu-toggle:checked ~ .hamburger .bar3 {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  .menu-link {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-size: 1.1rem;
+  }
+
+  .menu-link:hover {
+    background: rgba(16, 255, 96, 0.15);
+  }
+}

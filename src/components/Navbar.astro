@@ -1,0 +1,32 @@
+---
+const links = [
+  { href: "/", text: "1. Inicio" },
+  { href: "/about", text: "2. About" },
+  { href: "/contact", text: "3. Contacto" },
+];
+---
+
+<link rel="stylesheet" href="/styles/Navbar.css" />
+
+<nav class="navbar">
+  <div class="container">
+    <a href="/" class="logo">MiSitio</a>
+
+    <!-- Checkbox oculto -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+    
+    <!-- Botón hamburguesa mejorado -->
+    <label for="menu-toggle" class="hamburger">
+      <span class="bar bar1"></span>
+      <span class="bar bar2"></span>
+      <span class="bar bar3"></span>
+    </label>
+
+    <!-- Menú -->
+    <div class="menu">
+      {links.map(link => (
+        <a href={link.href} class="menu-link">{link.text}</a>
+      ))}
+    </div>
+  </div>
+</nav>
